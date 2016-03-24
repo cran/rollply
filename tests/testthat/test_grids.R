@@ -1,6 +1,6 @@
 
 library(rollply)
-context('Grid building: grid_identical')
+context('Grid building')
 
 # Define some sets of points
 exampleset <- data.frame(x = seq.int(0,1,l=100), 
@@ -16,6 +16,6 @@ test_that("Common grid_builders test", {
   # Note that R CMD's check do not work with ahull_*, probably due to 
   # mispackaging ?
   for (builder in grid_builders[1:2]) { 
-    expect_is( builder(exampleset,npts=100,pad=0), "data.frame" )
+    expect_is( builder(exampleset, npts=100, pad=0), "data.frame" )
   }
 })
